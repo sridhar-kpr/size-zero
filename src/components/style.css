@@ -1,0 +1,25 @@
+/* Example CSS media queries */
+@media (max-width: 767px) {
+    .background-img {
+        /* Styles for background image on small screens */
+    }
+
+    .selected-img {
+        /* Styles for selected image on small screens */
+    }
+
+    /* Add styles for other images on small screens */
+}
+
+@media (min-width: 768px) {
+    .background-img {
+        /* Styles for background image on larger screens */
+    }
+
+    .selected-img {
+        /* Styles for selected image on larger screens */
+    }
+
+    /* Add styles for other images on larger screens */
+}
+    

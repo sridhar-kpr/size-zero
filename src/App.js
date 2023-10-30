@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider } from '@mantine/core';
+import HomeSizePage from './components/HomeSizePage';
+import Home from './components/Home';
+import HandSizePage from './components/Handsizepge'; // Import HandSizePage
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{height:'100vh'}} >  <MantineProvider>
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/collar" element={<HomeSizePage />} />
+            <Route path="/hand" element={<HandSizePage />} />
+          </Routes>
+        </div>
+      </Router>
+    </MantineProvider>
     </div>
   );
 }
