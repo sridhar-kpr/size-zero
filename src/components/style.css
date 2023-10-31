@@ -29,8 +29,8 @@
     background-color: #011638 !important;     
     } */
 .css-1m10gpf-MuiPaper-root-MuiAppBar-root{
-background-image: url("../assets/logo/logo-back.png")  ;
-background-repeat: round;
+background-image: url("../assets/logo/logo-back.png") !important  ;
+background-repeat: round !important;
 
 object-fit: cover;
 }
