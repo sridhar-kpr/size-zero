@@ -21,5 +21,23 @@
     }
 
     /* Add styles for other images on larger screens */
+
+   
 }
-    
+
+    /* .css-11yukd5-MuiTabs-indicator{
+    background-color: #011638 !important;     
+    } */
+.css-1m10gpf-MuiPaper-root-MuiAppBar-root{
+background-image: url("../assets/logo/logo-back.png")  ;
+background-repeat: round;
+
+object-fit: cover;
+}
+.buto{
+    background-image: url("../assets/logo/logo-back.png")  ;
+
+}
+.css-11yukd5-MuiTabs-indicator{
+background-color: #690500 !important;
+}

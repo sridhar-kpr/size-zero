@@ -30,6 +30,9 @@ import hipsterround from "../assets/collar/hipster-rounded.png";
 import club from "../assets/collar/club.png";
 
 const Home = () => {
+  const storedItemcuf = localStorage.getItem("selectedcuff");
+  console.log('storedItemcuf----->',storedItemcuf  )
+
   let bang;
   const [selectedItem, setSelectedItem] = useState(set2);
   const [selectedItemcuf, setSelectedItemcuf] = useState(set4);
@@ -189,7 +192,7 @@ const Home = () => {
         </Button>
       </Box>{" "} */}
        <Box sx={{ "& > :not(style)": { ml: 39, mt: 5 } }}>
-        <Button
+        <Button  
           onClick={() => (window.location.href = "/collar")}
           sx={{
             borderRadius: 10,
@@ -201,20 +204,21 @@ const Home = () => {
           size="small"
           component="label"
           startIcon={
-            <Fab
-              sx={{ left: -3.5, backgroundColor: "#9055A2" }}
+            <Fab  className="buto"
+              sx={{ left: -3.5, backgroundColor: "white" }}
               aria-label="add"
               size="small"
             >
-              <AddIcon />
+              <AddIcon sx={{color:'white'}}/>
             </Fab>
           }
         >
           <div style={{ color: "#011638" }}>Collar </div>
         </Button>
       </Box>{" "}
-      <Box sx={{ "& > :not(style)": { ml: 50, mt: 40 } }}>
-        <Button
+
+    { storedItemcuf !== 'slevee'? <Box sx={{ "& > :not(style)": { ml: 50, mt: 39 } }}>
+        <Button 
           onClick={() => (window.location.href = "/hand")}
           sx={{
             borderRadius: 10,
@@ -222,22 +226,48 @@ const Home = () => {
             cursor: "pointer",
             height: 40,
             zIndex: 15,
+            
           }}
           size="small"
           component="label"
           startIcon={
-            <Fab
+            <Fab className="buto"
               sx={{ left: -5, backgroundColor: "#9055A2" }}
               aria-label="add"
               size="small"
             >
-              <AddIcon />
+              <AddIcon sx={{color:'white'}}/>
             </Fab>
           }
         >
           <div style={{ color: "#011638" }}>Hand </div>
         </Button>
-      </Box>{" "}
+      </Box>:<Box sx={{ "& > :not(style)": { ml: 55, mt: 20 } }}>
+        <Button 
+          onClick={() => (window.location.href = "/hand")}
+          sx={{
+            borderRadius: 10,
+            border: "1px solid #011638",
+            cursor: "pointer",
+            height: 40,
+            zIndex: 15,
+            
+          }}
+          size="small"
+          component="label"
+          startIcon={
+            <Fab className="buto"
+              sx={{ left: -5, backgroundColor: "#9055A2" }}
+              aria-label="add"
+              size="small"
+            >
+              <AddIcon sx={{color:'white'}}/>
+            </Fab>
+          }
+        >
+          <div style={{ color: "#011638" }}>Hand </div>
+        </Button>
+      </Box>}
 
       {/* <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', padding: '20px', background: '#f0f0f0' }}>
       <h3>Additional Content</h3>

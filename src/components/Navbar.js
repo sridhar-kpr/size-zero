@@ -15,6 +15,10 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import back from '../assets/logo/logo-back.png'
+import logo from '../assets/logo/Screenshot 2023-10-31 104058.png'
+// import { makeStyles } from "@material-ui/core/styles";
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -29,6 +33,9 @@ const Search = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
     width: 'auto',
+  },
+  header: {
+    backgroundImage: `url(${back})`,
   },
 }));
 
@@ -57,6 +64,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -157,7 +165,7 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
 
-      <AppBar position="static" sx={{ backgroundColor: '#011638' }}>
+      <AppBar position="static" style={{backgroundImage:`${back}` }}  sx={{  backgroundImage: ``, objectFit:'fill'  }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -174,8 +182,7 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Zoro Styl
-          </Typography>
+<img src={logo} style={{marginTop:'10px'}} width={100} ></img>          </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

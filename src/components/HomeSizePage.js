@@ -32,11 +32,11 @@ function HomeSizePage() {
     <div>
       <Grid
       sx={{
-        // marginTop:10,
+        // marginBottom:10,
         // height: "500px",
         // "@media (min-width: 768px)": {
         //   height: "600px",
-        padding:10
+        padding:6
         // },
       }}
        container >
@@ -54,7 +54,7 @@ function HomeSizePage() {
                 className="selected-img"
                 src={select}
                 alt="test"
-                style={{ zIndex: "9", position: "absolute", left: "5rem" }}
+                style={{ zIndex: "9", position: "absolute", left: "3rem" }}
               />
             )}
 
@@ -62,7 +62,7 @@ function HomeSizePage() {
               className="colarbutton-img"
               src={colarbutton}
               alt="button"
-              style={{ zIndex: "3", position: "absolute", left: "1rem" }}
+              style={{ zIndex: "3", position: "absolute", left: "3rem" }}
             />
 
             <img
@@ -227,10 +227,11 @@ function HomeSizePage() {
                 }`,
 
                 margin: "1%",
-                padding: "13px",
+                padding: "10px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                textAlign:'center'
               }}
               onClick={() => {
                 Setselect(hipsterrounded);
@@ -238,7 +239,7 @@ function HomeSizePage() {
               }}
             >
               <img src={iconhipsterround} alt="iconhipsterround" style={{}} />
-              <p style={{ textAlign: "center" }}>Hipster Round</p>
+              <p style={{ textAlign: "center" }}>Hipster-R</p>
             </div>
             <div
               className="card"
@@ -285,7 +286,7 @@ function HomeSizePage() {
               <p style={{ textAlign: "center" }}>Club Collar</p>
             </div>
           </div>
-          <button
+          <button className="buto"
             style={{
               width: "98.5%",
               height: "3rem",
@@ -297,26 +298,26 @@ function HomeSizePage() {
               flexDirection: "column",
               alignItems: "center",
               color: "white", // Text color
-              background: "black", // Initial background color
+              fontSize:'20px',
+              // background: "black", // Initial background color
               transition: "background 0.5s", // Smooth transition for background color
               position: "relative",
               overflow: "hidden", // Hide overflow to prevent background gradient overflow
             }}
-            onMouseEnter={(e) => {
-              // On hover, set the background color to slide from left to right
-              e.target.style.background =
-                "linear-gradient(to right, black, #dddddd)";
-            }}
+            // onMouseEnter={(e) => {
+            //   // On hover, set the background color to slide from left to right
+            //   e.target.style.background =
+            //     "linear-gradient(to right, black, #dddddd)";
+            // }}
             onClick={(e) => {
               window.location.href = "/";
             }}
-            onMouseLeave={(e) => {
-              // On mouse leave, reset the background color
-              e.target.style.background = "black";
-            }}
+            // onMouseLeave={(e) => {
+            //   // On mouse leave, reset the background color
+            //   e.target.style.background = "black";
+            // }}
           >
-            Button
-          </button>
+Apply          </button>
 
         </Grid>
         
