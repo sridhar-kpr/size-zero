@@ -284,13 +284,13 @@ const Home = () => {
               style={{ position: "absolute", zIndex: "3  " }}
             />
           )}
-          {/* {
+          {
             <img
               src={placket}
               alt="bodyimg5"
               style={{ position: "absolute", zIndex: "3" }}
             />
-          } */}
+          }
           {selectedItemcuf !== slevee ? (
             <img
               src={set6}
