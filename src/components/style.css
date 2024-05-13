@@ -35,7 +35,8 @@ background-repeat: round !important;
 object-fit: cover;
 }
 .buto{
-    background-image: url("../assets/logo/logo-back.png")  ;
+    /* background-image: url("../assets/logo/logo-back.png") !important  ; */
+    background-color: #0B093B;
 
 }
 .css-11yukd5-MuiTabs-indicator{

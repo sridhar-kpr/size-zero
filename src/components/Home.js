@@ -10,7 +10,10 @@ import set6 from "../assets/bodyset6.png";
 import set7 from "../assets/bodyset7.png";
 import AddIcon from "@mui/icons-material/Add";
 import Fab from "@mui/material/Fab";
-
+import frenchplacket from "../assets/main-placket/placket-french.png";
+import conceals from "../assets/main-placket/placket-concealed.png";
+import skinny from "../assets/main-placket/placket-skinny.png";
+import regular from "../assets/main-placket/placket-regular.png";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
@@ -19,19 +22,31 @@ import singlebuttoncuffarm from "../assets/cuffstyle/bsc-cuff-single-button.png"
 import doublebuttoncuff from "../assets/cuffstyle/bsc-cuff-double-button.png";
 import neapolitian from "../assets/cuffstyle/bsc-cuff-neopolitan.png";
 import french from "../assets/cuffstyle/bsc-sleeve-long-cuff-french.png";
-import slevee from '../assets/cuffstyle/bsc-sleeve-half.png'
+import slevee from "../assets/cuffstyle/bsc-sleeve-half.png";
 import spread from "../assets/collar/spread.png";
 import prince from "../assets/collar/prince.png";
+import back from "../assets/icons8-back-50.png"
 import polo from "../assets/collar/polo.png";
 import madmen from "../assets/collar/madmen.png";
 import conceal from "../assets/collar/concealed.png";
 import hipster from "../assets/collar/hipster.png";
 import hipsterround from "../assets/collar/hipster-rounded.png";
 import club from "../assets/collar/club.png";
-
+import pocket1 from "../assets/main-pocket/pocket-single-flap.png";
+import pocket2 from "../assets/main-pocket/pocket-single-angled.png";
+import front from "../assets/bodyset1.png";
+import hand1 from "../assets/poc/left sleeve.png";
 const Home = () => {
   const storedItemcuf = localStorage.getItem("selectedcuff");
-  console.log('storedItemcuf----->',storedItemcuf  )
+  const [select, Setselect] = useState();
+
+  const collarename = localStorage.getItem("collarname");
+  const collarcolour = localStorage.getItem("collarcolour");
+  // const placketdata = localStorage.getItem("placket");
+
+  const [placket, setPlacket] = useState(french);
+
+  console.log("storedItemcuf----->", storedItemcuf);
 
   let bang;
   const [selectedItem, setSelectedItem] = useState(set2);
@@ -39,7 +54,30 @@ const Home = () => {
 
   useEffect(() => {
     const storedItem = localStorage.getItem("selectedCollar");
+
+    let pocket = localStorage.getItem("pocket");
+
     // localStorage.setItem('selectedcuff', 'neapolitian');
+    if (pocket === "pocket2") {
+      Setselect(pocket2);
+    }
+    if (pocket === "pocket1") {
+      Setselect(pocket1);
+    }
+
+    let plackets = localStorage.getItem("placket");
+    if (plackets == "frenchplacket") {
+      setPlacket(frenchplacket);
+    }
+    if (plackets == "conceal") {
+      setPlacket(conceals);
+    }
+    if (plackets == "skinny") {
+      setPlacket(skinny);
+    }
+    if (plackets == "regular") {
+      setPlacket(regular);
+    }
 
     let newSelectedItem = set2; // Default value
     const storedItemcuf = localStorage.getItem("selectedcuff");
@@ -49,7 +87,6 @@ const Home = () => {
       // Check if the stored item matches any of the image paths
       if (storedItem === "spread") {
         console.log("spread");
-
         newSelectedItem = spread;
       } else if (storedItem === "prince") {
         console.log("prince");
@@ -73,7 +110,7 @@ const Home = () => {
       } else if (storedItem === "bang") {
         newSelectedItem = bang;
         console.log("bang");
-      }
+      }       
 
       // Update the state with the selected item
       setSelectedItem(newSelectedItem);
@@ -94,8 +131,7 @@ const Home = () => {
       } else if (storedItemcuf === "french") {
         console.log("french");
         newSelectedItemcuff = french;
-      }
-      else if (storedItemcuf === "slevee") {
+      } else if (storedItemcuf === "slevee") {
         console.log("sleve");
         newSelectedItemcuff = slevee;
       }
@@ -110,12 +146,72 @@ const Home = () => {
 
   return (
     <>
-      {/* <ColourPicker /> */}
-      {/* <Link to="/collar">Collar</Link>
-      <br />
-      <br />
-      <br />
-      <Link to="/hand">Hand</Link> */}
+       <img src={back} style={{cursor:'pointer',width:'30px',marginTop:'5px',position:'absolute'}}
+          onClick={() => (window.location.href = "/")}
+          ></img>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          // flexWrap: "nowrap",
+          top:"10px",
+          alignitems: "center",
+          position: "absolute",
+          left:'45rem',
+          backgroundColor:'#e5e5e5',
+          top:'10rem',
+          padding:'30px',
+          marginRight:'25px',
+          borderRadius:'30px'
+          
+        }}
+      >
+        <h1>
+          Your Custom
+          Shirt
+        </h1>
+        <h1>
+          $50
+        </h1>
+        <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+        </p>
+        <button
+          className="buto"
+          style={{
+            borderRadius:'20px',
+            width: "98.5%",
+            height: "3rem",
+            cursor: "pointer",
+            border: `solid 2px ${select === club ? "black" : "#dddddd"}`,
+            // margin: "1%",
+            marginTop: "3%",
+            padding: "13px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "white", // Text color
+            fontSize: "20px",
+            
+            // background: "black", // Initial background color
+            transition: "background 0.5s", // Smooth transition for background color
+            position: "relative",
+            overflow: "hidden", // Hide overflow to prevent background gradient overflow
+          }}
+         
+          onClick={(e) => {
+            window.location.href = "/cart";
+          }}
+          // onMouseLeave={(e) => {
+          //   // On mouse leave, reset the background color
+          //   e.target.style.background = "black";
+          // }}
+        >
+          Add to Cart{" "}
+        </button>
+      </div>
+
+      <div style={{backgroundColor:'#e5e5e5', height:'100%',position:'absolute ',width:'47%', borderRadius:'35px',margin:'30px'}}>
       <div style={{ alignContent: "center", justifyContent: "center" }}>
         <div
           style={{
@@ -126,44 +222,100 @@ const Home = () => {
           }}
         >
           <img
-            src={set1}
+            src={front}
             alt="bodyimg1"
-            style={{ position: "absolute", zIndex: "1" }}
+            width={500}
+            style={{ position: "absolute", zIndex: "0", top: "0rem" }}
           />
-          {/* <button>hi</button> */}
-          {selectedItem !== bang && (
+          {selectedItem !== bang ? (
+            <>
+              <div
+                style={{
+                  position: "absolute",
+                  zIndex: "15",
+                  left: "15rem",
+                  zIndex: " 15",
+                  top: "2.2rem",
+                  opacity: "0.7",
+                  fontSize: "14px",
+                  // fontFamily:'cursive',
+                  // transform: "rotate(3deg)",
+                  color: collarcolour, // Corrected the rotate value to a string
+                }}
+              >
+                {/* <p
+                 dangerouslySetInnerHTML={{ __html: collarename }}
+               /> */}
+              </div>
+              <img
+                src={selectedItem}
+                alt="bodyimg2"
+                style={{ position: "absolute", zIndex: "9" }}
+              />{" "}
+            </>
+          ) : (
+            <div
+              style={{
+                position: "absolute",
+                zIndex: "15",
+                left: "15rem",
+                zIndex: " 15",
+                top: "2.2rem",
+                opacity: "0.7",
+                fontSize: "14px",
+                // transform: "rotate(3deg)",
+                color: collarcolour, // Corrected the rotate value to a string
+              }}
+            >
+              <p dangerouslySetInnerHTML={{ __html: collarename }} />
+            </div>
+          )}
+          {
             <img
-              src={selectedItem}
-              alt="bodyimg2"
-              style={{ position: "absolute", zIndex: "9" }}
+              src={set3}
+              alt="bodyimg3"
+              style={{ position: "absolute", zIndex: "15" }}
+            />
+          }
+          {selectedItemcuf !== slevee && (
+            <img
+              src={selectedItemcuf}
+              alt="bodyimg4"
+              style={{ position: "absolute", zIndex: "3  " }}
             />
           )}
-
-          <img
-            src={set3}
-            alt="bodyimg3"
-            style={{ position: "absolute", zIndex: "15" }}
-          />
-          {selectedItemcuf !== slevee &&( <img
-            src={selectedItemcuf}
-            alt="bodyimg4"
-            style={{ position: "absolute", zIndex: "3  " }}
-          />)}
-          <img
-            src={set5}
-            alt="bodyimg5"
-            style={{ position: "absolute", zIndex: "3" }}
-          />
-         {selectedItemcuf !==slevee ? <img
-            src={set6}
-            alt="bodyimg6"
-            style={{ position: "absolute", zIndex: "2" }}
-          /> :<img
-          src={slevee}
-          alt="bodyimg6"
-          style={{ position: "absolute", zIndex: "2" }}
-        />}
-          {/* <img src={set7} alt="bodyimg7"   style={{position:'absolute', zIndex:'1'}}/> */}
+          {/* {
+            <img
+              src={placket}
+              alt="bodyimg5"
+              style={{ position: "absolute", zIndex: "3" }}
+            />
+          } */}
+          {selectedItemcuf !== slevee ? (
+            <img
+              src={set6}
+              // width={900}
+              alt="bodyimg6"
+              style={{ zIndex: "2", position: "absolute" }}
+            />
+          ) : (
+            <img
+              src={slevee}
+              alt="bodyimg6"
+              style={{ position: "absolute", zIndex: "2" }}
+            />
+          )}
+          {!select == "none" ? (
+            <></>
+          ) : (
+            <>
+              <img
+                src={select}
+                alt=""
+                style={{ position: "absolute", zIndex: "1" }}
+              />
+            </>
+          )}{" "}
         </div>
       </div>
       {/* <Box sx={{ "& > :not(style)": { ml: 35, mt: 5 } }}>
@@ -191,8 +343,8 @@ const Home = () => {
           <div style={{ color: "#011638" }}>COLLAR </div>
         </Button>
       </Box>{" "} */}
-       <Box sx={{ "& > :not(style)": { ml: 39, mt: 5 } }}>
-        <Button  
+      <Box sx={{ "& > :not(style)": { ml: 39, mt: 5 } }}>
+        <Button
           onClick={() => (window.location.href = "/collar")}
           sx={{
             borderRadius: 10,
@@ -204,76 +356,131 @@ const Home = () => {
           size="small"
           component="label"
           startIcon={
-            <Fab  className="buto"
-              sx={{ left: -3.5, backgroundColor: "white" }}
+            <Fab
+              className="buto"
+              sx={{ left: -5, backgroundColor: "#9055A2" }}
               aria-label="add"
               size="small"
             >
-              <AddIcon sx={{color:'white'}}/>
+              <AddIcon sx={{ color: "#0B093B" }} />
             </Fab>
           }
         >
           <div style={{ color: "#011638" }}>Collar </div>
         </Button>
       </Box>{" "}
-
-    { storedItemcuf !== 'slevee'? <Box sx={{ "& > :not(style)": { ml: 50, mt: 39 } }}>
-        <Button 
-          onClick={() => (window.location.href = "/hand")}
+      {/* pocket */}
+      <Box sx={{ "& > :not(style)": { ml: 41, mt: 10 } }}>
+        <Button
+          onClick={() => (window.location.href = "/pocket")}
           sx={{
             borderRadius: 10,
             border: "1px solid #011638",
             cursor: "pointer",
             height: 40,
             zIndex: 15,
-            
           }}
           size="small"
           component="label"
           startIcon={
-            <Fab className="buto"
+            <Fab
+              className="buto"
               sx={{ left: -5, backgroundColor: "#9055A2" }}
               aria-label="add"
               size="small"
             >
-              <AddIcon sx={{color:'white'}}/>
+              <AddIcon sx={{ color: "black" }} />
             </Fab>
           }
         >
-          <div style={{ color: "#011638" }}>Hand </div>
+          <div style={{ color: "#011638" }}>Pocket </div>
         </Button>
-      </Box>:<Box sx={{ "& > :not(style)": { ml: 55, mt: 20 } }}>
-        <Button 
-          onClick={() => (window.location.href = "/hand")}
+      </Box>{" "}
+      {/* placket */}
+      <Box sx={{ "& > :not(style)": { ml: 33, mt: 10 } }}>
+        <Button
+          onClick={() => (window.location.href = "/placket")}
           sx={{
             borderRadius: 10,
             border: "1px solid #011638",
             cursor: "pointer",
             height: 40,
             zIndex: 15,
-            
           }}
           size="small"
           component="label"
           startIcon={
-            <Fab className="buto"
+            <Fab
+              className="buto"
               sx={{ left: -5, backgroundColor: "#9055A2" }}
               aria-label="add"
               size="small"
             >
-              <AddIcon sx={{color:'white'}}/>
+              <AddIcon sx={{ color: "black" }} />
             </Fab>
           }
         >
-          <div style={{ color: "#011638" }}>Hand </div>
+          <div style={{ color: "#011638" }}>P lacket </div>
         </Button>
-      </Box>}
-
-      {/* <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', padding: '20px', background: '#f0f0f0' }}>
-      <h3>Additional Content</h3>
-      <p>This is some additional content on the right side.</p>
-    </div> */}
+      </Box>{" "}
+      {storedItemcuf !== "slevee" ? (
+        <Box sx={{ "& > :not(style)": { ml: 48, mt: 10 } }}>
+          <Button
+            onClick={() => (window.location.href = "/hand")}
+            sx={{
+              borderRadius: 10,
+              border: "1px solid #011638",
+              cursor: "pointer",
+              height: 40,
+              zIndex: 15,
+            }}
+            size="small"
+            component="label"
+            startIcon={
+              <Fab
+                className="buto"
+                sx={{ left: -5, backgroundColor: "#9055A2" }}
+                aria-label="add"
+                size="small"
+              >
+              <AddIcon sx={{ color: "black" }} />
+              </Fab>
+            }
+          >
+            <div style={{ color: "#011638" }}>Hand </div>
+          </Button>
+        </Box>
+      ) : (
+        <Box sx={{ "& > :not(style)": { ml: 55, mt: -12 } }}>
+          <Button
+            onClick={() => (window.location.href = "/hand")}
+            sx={{
+              borderRadius: 10,
+              border: "1px solid #011638",
+              cursor: "pointer",
+              height: 40,
+              zIndex: 15,
+            }}
+            size="small"
+            component="label"
+            startIcon={
+              <Fab
+                className="buto"
+                sx={{ left: -5, backgroundColor: "#9055A2" }}
+                aria-label="add"
+                size="small"
+              >
+              <AddIcon sx={{ color: "black" }} />
+              </Fab>
+            }
+          >
+            <div style={{ color: "#011638" }}>Hand </div>
+          </Button>
+        </Box>
+      )}
+      </div>
     </>
+
   );
 };
 

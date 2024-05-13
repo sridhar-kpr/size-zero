@@ -1,0 +1,12 @@
+.navitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  align-content: end;
+  gap: 40px;
+}
+
+.nav {
+  margin: 0px 5px 38rem;
+}
