@@ -41,7 +41,8 @@ export default function Projects() {
                 img={ProjectImg2}
                 title="Awesome Project"
                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                action={() => {                  window.location.href = "/home";
+              }}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -49,7 +50,8 @@ export default function Projects() {
                 img={ProjectImg3}
                 title="Awesome Project"
                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                action={() => {                  window.location.href = "/home";
+}}
               />
             </div>
           </div>
@@ -59,7 +61,8 @@ export default function Projects() {
                 img={ProjectImg4}
                 title="Awesome Project"
                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                action={() => {                  window.location.href = "/home";
+}}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -67,7 +70,8 @@ export default function Projects() {
                 img={ProjectImg5}
                 title="Awesome Project"
                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                action={() => {                  window.location.href = "/home";
+}}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -75,13 +79,15 @@ export default function Projects() {
                 img={ProjectImg6}
                 title="Awesome Project"
                 text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                action={() => {                  window.location.href = "/home";
+}}
               />
             </div>
           </div>
           <div className="row flexCenter">
             <div style={{ margin: "50px 0", width: "200px" }}>
-              <FullButton title="Load More" action={() => alert("clicked")} />
+              <FullButton title="Load More" action={() => {                  window.location.href = "/home";
+}} />
             </div>
           </div>
         </div>
@@ -105,10 +111,12 @@ export default function Projects() {
               </p>
               <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0" }}>
                 <div style={{ width: "190px" }}>
-                  <FullButton title="Get Started" action={() => alert("clicked")} />
+                  <FullButton title="Get Started" action={() => {                  window.location.href = "/home";
+}} />
                 </div>
                 <div style={{ width: "190px", marginLeft: "15px" }}>
-                  <FullButton title="Contact Us" action={() => alert("clicked")} border />
+                  <FullButton title="Contact Us" action={() => {                  window.location.href = "/home";
+}} border />
                 </div>
               </ButtonsRow>
             </AddRight>
