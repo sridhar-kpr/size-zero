@@ -147,7 +147,7 @@ function Handsizepge() {
                 <Tab
                   label="Cuff style"
                   value="1"
-                  style={{ color: "#690500" }}
+                  style={{ color: "#0B093B" }}
                   onClick={() => {
                     Setshortsleve(false);
                   }}
@@ -190,13 +190,14 @@ function Handsizepge() {
                   <div
                     className="card"
                     style={{
-                      // width: "2rem",
-                      height: "7rem",
+                      width: "111%",
+                      height: "9rem",
                       border: `solid 2px ${
-                        select === singlebuttoncuffarm ? "#690500" : "#dddddd"
+                        select === singlebuttoncuffarm ? "#0B093B" : "#dddddd"
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -227,13 +228,14 @@ function Handsizepge() {
                   <div
                     className="card"
                     style={{
-                      // width: "2rem",
-                      height: "7rem",
+                      width: "111%",
+                      height: "9rem",
                       border: `solid 2px ${
-                        select === doublebuttoncuff ? "#690500" : "#dddddd"
+                        select === doublebuttoncuff ? "#0B093B" : "#dddddd"
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -261,13 +263,14 @@ function Handsizepge() {
                   <div
                     className="card"
                     style={{
-                      // width: "2rem",
-                      height: "7rem",
+                      width: "111%",
+                      height: "9rem",
                       border: `solid 2px ${
-                        select === neapolitian ? "#690500" : "#dddddd"
+                        select === neapolitian ? "#0B093B" : "#dddddd"
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -295,13 +298,14 @@ function Handsizepge() {
                   <div
                     className="card"
                     style={{
-                      // width: "2rem",
-                      height: "7rem",
+                      width: "111%",
+                      height: "9rem",
                       border: `solid 2px ${
-                        select === french ? "#690500" : "#dddddd"
+                        select === french ? "#0B093B" : "#dddddd"
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -336,6 +340,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -358,6 +363,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -380,6 +386,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -406,6 +413,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -428,6 +436,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -463,7 +472,7 @@ function Handsizepge() {
                     style={{
                       // width: "2rem",
                       height: "7rem",
-                      border: `solid 2px ${!shortsleve ? "#690500" : "#dddddd"}`,
+                      border: `solid 2px ${!shortsleve ? "#0B093B" : "#dddddd"}`,
 
                       margin: "1%",
                       padding: "13px",
@@ -471,8 +480,13 @@ function Handsizepge() {
                       flexDirection: "column",
                       alignItems: "center",
                     }}
-                    onClick={() => Setshortsleve(false)}
+                    onClick={() => {
+                      Setshortsleve(false);
+                      localStorage.setItem("selectedcuff", "singlebuttoncuffarm ");
+                    }}
+
                   >
+
                     <img src={longsleeve} alt="iconconcal" style={{}} />
                     <p
                       style={{
@@ -482,7 +496,7 @@ function Handsizepge() {
                         wordBreak: "break-word",
                       }}
                     >
-                      longsleeve
+                      Long
                     </p>
                   </div>
                 </Grid>
@@ -492,9 +506,10 @@ function Handsizepge() {
                     style={{
                       // width: "2rem",
                       height: "7rem",
-                      border: `solid 2px ${shortsleve ? "#690500" : "#dddddd"}`,
+                      border: `solid 2px ${shortsleve ? "#0B093B" : "#dddddd"}`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -514,7 +529,7 @@ function Handsizepge() {
                         wordBreak: "break-word",
                       }}
                     >
-                      shortsleeve
+                      Short
                     </p>
                   </div>{" "}
                 </Grid>
@@ -529,6 +544,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -551,6 +567,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -573,6 +590,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -595,6 +613,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -617,6 +636,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -643,6 +663,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -665,6 +686,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -700,7 +722,7 @@ function Handsizepge() {
                     style={{
                       // width: "2rem",
                       height: "7rem",
-                      border: `solid 2px ${!softcuf ? "#690500" : "#dddddd"}`,
+                      border: `solid 2px ${!softcuf ? "#0B093B" : "#dddddd"}`,
 
                       margin: "1%",
                       padding: "13px",
@@ -730,9 +752,10 @@ function Handsizepge() {
                     style={{
                       // width: "2rem",
                       height: "7rem",
-                      border: `solid 2px ${softcuf ? "#690500" : "#dddddd"}`,
+                      border: `solid 2px ${softcuf ? "#0B093B" : "#dddddd"}`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -764,6 +787,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -786,6 +810,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -808,6 +833,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -830,6 +856,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -852,6 +879,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -878,6 +906,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -900,6 +929,7 @@ function Handsizepge() {
                       }`,
 
                       margin: "2%",
+                      cursor:'pointer',
                       padding: "13px",
                       display: "flex",
                       flexDirection: "column",
@@ -919,7 +949,7 @@ function Handsizepge() {
               width: "98.5%",
               height: "3rem",
               cursor: "pointer",
-              border: `solid 2px ${select === club ? "#690500" : "#dddddd"}`,
+              border: `solid 2px ${select === club ? "#0B093B" : "#dddddd"}`,
               margin: "1%",
               padding: "13px",
               display: "flex",
@@ -938,7 +968,7 @@ function Handsizepge() {
             //     "linear-gradient(to right, #690500, #dddddd)";
             // }}
             onClick={(e) => {
-              window.location.href = "/";
+              window.location.href = "/home";
             }}
             // onMouseLeave={(e) => {
             //   // On mouse leave, reset the background color
